@@ -16,14 +16,9 @@ export class PostAlbumComponent {
 
   albums: any;
   filteredAlbum!: Observable<any[]>;
-
   myControl = new FormControl();
-
   options = [];
-
   filteredOptions: Observable<any[]>;
-
-
 
 
   constructor(
@@ -34,21 +29,13 @@ export class PostAlbumComponent {
     this.init();
 
     this.filteredOptions = this.myControl.valueChanges.pipe(
-
-        startWith(''),
-
-        debounceTime(400),
-
-        distinctUntilChanged(),
-
-        switchMap(val => {
-
-              return this.filter(val || '')
-
-        })
-
-      )
-
+      startWith(''),
+      debounceTime(400),
+      distinctUntilChanged(),
+      switchMap(val => {
+        return this.filter(val || '')
+      })
+    )
   }
 
   init() {
