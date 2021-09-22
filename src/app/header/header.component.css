@@ -1,0 +1,12 @@
+@import "../../bootstrap.min.css";
+
+.offcanvas-start {
+  display: block;
+  z-index: 9999;
+  left: 400px;
+  visibility: visible;
+}
+
+.nav {
+  display: block;
+}

@@ -1,0 +1,24 @@
+<main class="form-signin">
+  <form [formGroup]="form" (ngSubmit)="submitForm()">
+    <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
+
+    <div *ngIf="form.controls['mobile'].hasError('required') || form.controls['mobile'].hasError('required') || form.controls['mobile'].hasError('pattern') || form.controls['mobile'].hasError('pattern') || form.controls['password'].hasError('required')" class="alert alert-danger">
+        <div *ngIf="form.controls['mobile'].hasError('required')">Please enter Mobile number</div>
+        <div *ngIf="form.controls['mobile'].hasError('minlength')">Mobile Number should valid.</div>
+        <div *ngIf="form.controls['mobile'].hasError('maxlength')">Mobile Number should valid.</div>
+        <div *ngIf="form.controls['mobile'].hasError('pattern')">Mobile Number must be digit.</div>
+        <div *ngIf="form.controls['password'].hasError('required')">Please Enter Password</div>
+    </div>
+
+    <div class="form-floating">
+      <input type="text" class="form-control" id="floatingInput" placeholder="Your Mobile" formControlName="mobile">
+      <label for="floatingInput">Mobile Number</label>
+    </div>
+    <div class="form-floating">
+      <input type="password" class="form-control" id="floatingPassword" placeholder="Password" formControlName="password">
+      <label for="floatingPassword">Password</label>
+    </div>
+
+    <button class="w-100 btn btn-lg btn-primary" type="submit" [disabled]="!form.valid">Sign in</button>
+  </form>
+</main>

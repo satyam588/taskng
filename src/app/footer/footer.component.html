@@ -1,0 +1,11 @@
+<footer class="footer mt-auto py-3 bg-light">
+  <div class="container">
+    <div *ngIf = "loggedIn === null; else elseBlock">
+      <span class="text-dark">This is #Footer.</span>
+    </div>
+    <ng-template #elseBlock>
+      <span class="text-dark">User Logged in With Mobile: {{loggedIn}}</span>
+    </ng-template>
+
+  </div>
+</footer>

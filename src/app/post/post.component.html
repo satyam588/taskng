@@ -1,0 +1,16 @@
+
+<div class="container my-5">
+  <ul class="list-group">
+
+    <li class="list-group-item" >
+      <span *ngFor = "let post of postData; let i = index">
+        <span *ngIf = "i < 10; else elseBlock ">
+          <a style="display: block" class="my-1" (click)="sendOfferId(post.id)"  routerLink="/post-detail" >{{ post.title }}</a>
+          <br>
+        </span>
+        <ng-template #elseBlock></ng-template>
+      </span>
+    </li>
+  </ul>
+</div>
+

@@ -1,0 +1,26 @@
+
+<div class="container bg-secondary">
+
+  <form class="example-form">
+    <mat-form-field>
+       <input
+        type="text"
+        placeholder="Post Title"
+        [formControl]="myControl"
+        matInput
+        [matAutocomplete]="auto">
+
+        <mat-autocomplete #auto="matAutocomplete">
+          <mat-option
+              *ngFor="let option of filteredOptions | async"
+              [value]="option.title">
+            <img style="vertical-align:middle;" aria-hidden src="{{option.thumbnailUrl}}" height="30" /> &nbsp;
+            <span>{{ option.title }}</span>
+          </mat-option>
+       </mat-autocomplete>
+    </mat-form-field>
+
+</form>
+
+</div>
+
